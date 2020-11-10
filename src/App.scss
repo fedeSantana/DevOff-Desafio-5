@@ -140,22 +140,6 @@ $pokemonCard__width: 45vw;
   top: 44px;
 }
 
-.pokemonCard__typesContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-family: Segoe UI;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 19px;
-  max-width: 140px;
-  /* identical to box height */
-  text-align: center;
-
-  color: #ffffff;
-}
-
 .pokemonCard__name {
   margin: 44px 0 0 0;
   font-family: Segoe UI;
@@ -179,47 +163,67 @@ $pokemonCard__width: 45vw;
   
 }
 
-.pokemonCard__typeContainer {
-  border-radius: 500px;
-  padding: 2px 4px;
-  margin: 0 4px;
-  background:yellow;
+.pokemonCard__typesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
 }
 
-.pokemonCard__typeBackdrop{
+.pokemonCard__typeContainer {
   position: relative;
-  width: 100%; 
-  height: 100%;
+  width: 73px;
+  height: 1rem;
   top: 0;
   left: 0;
   border-radius: 500px;
-  margin: auto;
+  padding: 2px 4px;
+  margin: 0 8px;
+
+}
+
+.pokemonCard__typeBackdrop{
+  position: absolute;
+  width: 73px;
+  height: 1rem;
+  top: auto;
+  left: auto;
+  border-radius: 500px;
+  padding: 2px 4px;
   background: #E2E2E2;
   mix-blend-mode: multiply;
 }
 
 .pokemonCard__typeOverlay{
-  position:relative;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  width: 73px;
+  height: 1rem;
+  top: auto;
+  left: auto;
   border-radius: 500px;
+  padding: 2px 4px;
   mix-blend-mode:multiply;
 
 }
 
 .pokemonCard__type {
+  position: absolute;
+  width:  73px;
+  height: 1rem;
+  top: auto;
+  left: auto;
   border-radius: 500px;
   padding: 2px 4px;
-  margin: 0 4px;
   color: white;
   background-color: black;
   mix-blend-mode: screen;
-  width: 100%;
-  height: 100%;
 }
 
 .mixBlendMode{
   mix-blend-mode:soft-light;
-}
+} 
