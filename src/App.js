@@ -1,49 +1,90 @@
-import logo from './logo.svg';
-import './App.scss';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Pokedex from "./views/pokedex"
+import './styles/main.scss';
 
-function App() {
+// This site has 3 pages, all of which are rendered
+// dynamically in the browser (not server rendered).
+//
+// Although the page does not ever refresh, notice how
+// React Router keeps the URL up to date as you navigate
+// through the site. This preserves the browser history,
+// making sure things like the back button and bookmarks
+// work properly.
+
+export default function BasicExample() {
   return (
-    <div class="pokemonRow">
-      <div class="pokemonCard--fire">
-        <div class="pokemonCard_content">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" class="pokemonCard__image" />
-          <div class="pokemonCard__box">
-            <div class="pokemonCard__imageSpace"></div>
-            <h3 class="pokemonCard__name">Charmander</h3>
-            <div class="pokemonCard__typesContainer">
-              <div class="pokemonCard__typeContainer">
-                <div class="pokemonCard__typeBackdrop"></div>
-                <p class="pokemonCard__type">dragon</p>
-                <div class="pokemonCard__typeOverlay"></div>
-              </div>
-              <div class="pokemonCard__typeContainer">
-                <div class="pokemonCard__typeBackdrop"></div>
-                <p class="pokemonCard__type">dragon</p>
-                <div class="pokemonCard__typeOverlay"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <svg class="pokemonCard__background" width="240" height="110" viewBox="0 0 240 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="110">
-            <rect width="240" height="110" rx="55" fill="#7CCD55" />
-          </mask>
-          <g mask="url(#mask0)">
-            <rect class="pokemonCard__colorLayer" width="240" height="110" rx="55" fill="inherit" />
-            <g class="mixBlendMode">
-              <path d="M54.2349 36.5978C33.7367 26.3488 0 31.4733 0 31.4733V-1.5H240V31.4733C240 31.4733 205.409 26.3488 184.911 36.5978C164.413 43.4306 140.071 67.838 119.573 68.1993C99.0747 68.6177 74.7331 43.4306 54.2349 36.5978Z" fill="#979797" />
-            </g>
-            <g class="mixBlendMode">
-              <circle cx="211.5" cy="89.5" r="14.5" fill="#979797" />
-              <path d="M264 95C264 107.73 258.416 119.939 248.477 128.941C238.537 137.943 225.056 143 211 143C196.944 143 183.463 137.943 173.523 128.941C163.584 119.939 158 107.73 158 95L186.447 95C186.447 100.898 189.034 106.553 193.638 110.724C198.243 114.894 204.488 117.237 211 117.237C217.512 117.237 223.757 114.894 228.362 110.724C232.966 106.553 235.553 100.898 235.553 95H264Z" fill="#979797" />
-              <path d="M264 85C264 72.2696 258.416 60.0606 248.477 51.0589C238.537 42.0571 225.056 37 211 37C196.944 37 183.463 42.0571 173.523 51.0589C163.584 60.0606 158 72.2696 158 85L186.447 85C186.447 79.1025 189.034 73.4465 193.638 69.2764C198.243 65.1062 204.488 62.7634 211 62.7634C217.512 62.7634 223.757 65.1062 228.362 69.2764C232.966 73.4465 235.553 79.1025 235.553 85H264Z" fill="#979797" />
-            </g>
-          </g>
-        </svg>
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/pokedex">pokedex</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        {/*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/pokedex">
+            <Pokedex/>
+          </Route>
+        </Switch>
       </div>
-    </div>
-  
+    </Router>
   );
 }
 
-export default App;
+// You can think of these components as "pages"
+// in your app.
+
+function Home() {
+  return (
+    <h2>home</h2>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+  );
+}

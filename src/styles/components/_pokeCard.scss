@@ -1,0 +1,142 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+ 
+// Variables of the component
+
+$pokeCard__width: 45vw;
+
+// No debería ir acá
+.pokemonRow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+  }  
+
+.pokeCard {
+    position: relative;
+    width: 240px;
+    height: 120px;
+    margin: 24px 24px;
+    cursor: pointer;
+    
+    @each $name, $color in $colors {
+      @include modifier(#{$name}){
+        .pokeCard__colorLayer {
+            fill: $color;
+        }
+      }
+    }
+  }
+  
+  .pokeCard__box {
+    display: flex;
+    flex-direction: column;
+    //background-color: #c4c4c4;
+    border-radius: 999px;
+    width: $pokeCard__width;
+    height: $pokeCard__width/2;
+    max-height: 120px;
+    max-width: 240px;
+    text-align: center;
+  }
+  
+  .pokeCard__image {
+    display: block;
+    position: relative;
+    width: 88px;
+    height: 88px;
+    text-align: center;
+    margin: auto auto;
+    top: 44px;
+  }
+  
+  .pokeCard__name {
+    margin: 44px 0 0 0;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+  
+    /* identical to box height */
+    text-align: center;
+  
+    color: #ffffff;
+  }
+  
+  .pokeCard__background {
+    position: absolute;
+    display: block;
+    top: 88px;
+    left: 0;
+    z-index: -100;
+    
+  }
+  
+  .pokeCard__typesContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+  }
+  
+  .pokeCard__typeContainer {
+    position: relative;
+    width: 73px;
+    height: 1rem;
+    top: 0;
+    left: 0;
+    border-radius: 500px;
+    padding: 2px 4px;
+    margin: 0 8px;
+  
+  }
+  
+  .pokeCard__typeBackdrop{
+    position: absolute;
+    width: 73px;
+    height: 1rem;
+    top: auto;
+    left: auto;
+    border-radius: 500px;
+    padding: 2px 4px;
+    background: #E2E2E2;
+    mix-blend-mode: multiply;
+  }
+  
+  .pokeCard__typeOverlay{
+    position: absolute;
+    width: 73px;
+    height: 1rem;
+    top: auto;
+    left: auto;
+    border-radius: 500px;
+    padding: 2px 4px;
+    mix-blend-mode:multiply;
+  
+  }
+  
+  .pokeCard__type {
+    position: absolute;
+    width:  73px;
+    height: 1rem;
+    top: auto;
+    left: auto;
+    border-radius: 500px;
+    padding: 2px 4px;
+    color: white;
+    background-color: black;
+    mix-blend-mode: screen;
+  }
+  
+  .mixBlendMode{
+    mix-blend-mode:soft-light;
+  } 
