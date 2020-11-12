@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import Pokedex from "./views/pokedex"
+import PokeCarrusel from "./views/pokecarrusel"
 import './styles/main.scss';
 
 // This site has 3 pages, all of which are rendered
@@ -34,6 +35,9 @@ export default function BasicExample() {
           <li>
             <Link to="/pokedex">pokedex</Link>
           </li>
+          <li>
+            <Link to="/pokeCarrusel">pokeCarrusel</Link>
+          </li>
         </ul>
 
         <hr />
@@ -57,6 +61,9 @@ export default function BasicExample() {
           </Route>
           <Route path="/pokedex">
             <Pokedex/>
+          </Route>
+          <Route path="/pokeCarrusel">
+            <PokeCarrusel/>
           </Route>
         </Switch>
       </div>
@@ -88,3 +95,4 @@ function Dashboard() {
     </div>
   );
 }
+

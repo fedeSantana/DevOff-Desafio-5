@@ -1,0 +1,115 @@
+
+/* VARIABLES */
+$pokemonSize: 68vw;
+/* END VARIABLES*/
+
+.navbar{
+  display: fixed;
+  width: 100vw;
+  height: 50px;
+  background-color: blue;
+  z-index: 2;
+}
+
+.pokeInformation{
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  left: 0;
+  top: 40vh;
+  background-color: #F4F4F4;
+  border-radius: 15px 15px 0px 0px;
+  z-index:1;
+}
+
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f67c7c;
+}
+
+.pokeCarrusel {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  max-width: 680px;
+  left: 50%; 
+  transform: translateX(-50%);
+  z-index:2;
+}
+
+.pokeCarrusel__pokemon {
+  position: absolute;
+  left: 50%;
+  top: 70%; // La esquina al centro
+  transform: translate(-50%, -50%); // el centro al centro he dicho
+  z-index: 2;
+}
+
+.pokeCarrusel__pokemon > img {
+  width: $pokemonSize;
+  max-width: 270px;
+}
+
+.pokeCarrusel__pokemonBefore {
+  position: absolute;
+  left: 50%;
+  top: 50%; // La esquina al centro
+  filter: brightness(25%);
+  transform: translate(-123.5%, -70%) scale(0.4);
+  z-index: 2;
+}
+
+.pokeCarrusel__pokemonBefore > img {
+  width: 68vw;
+  max-width: 300px;
+  max-height: auto;
+}
+
+.pokeCarrusel__pokemonAfter {
+  position: absolute;
+  left: 50%;
+  top: 50%; // La esquina al centro
+  filter: brightness(25%);
+  transform: translate(23.5%, -70%) scale(0.4);
+  z-index: 2;
+}
+
+.pokeCarrusel__pokemonAfter > img {
+  width: 68vw;
+  max-width: 300px;
+  max-height: auto;
+}
+
+.pokeCarrusel__backlight{
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  width: $pokemonSize;
+  height: $pokemonSize;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 100%;
+  background: #F67C7C;
+  background: radial-gradient(49.49% 49.85% at 50% 58.08%, #FFFFFF 8.85%, #F67C7C 100%);
+  mix-blend-mode: soft-light;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+}
+
+.pokeCarrusel__titleContainer{
+  position: relative;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+
+  /* identical to box height */
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 57px;
+  z-index: 2;
+}
+
