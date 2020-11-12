@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function PokeCarrusel() {
   return (
     <div class="pokeCarruselContainer">
@@ -8,13 +10,26 @@ export default function PokeCarrusel() {
             <h1 class="pokeCarrusel__title">Charizard</h1>
           </div>
           <div class="pokeCarrusel__display">
-            <div id="pikachu" class="pokeCarrusel__pokemonBefore">
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" />
-            </div>
+            <motion.div
+              animate={{
+                x: ["0%","50%","73%"],
+               // left: "50%", // Puede tener efecto sobre el hijo, pero este elemento no tiene sentido con left. Si al hijo le pongo hinerit... para probar.
+                y: ["0vw","10vw","23vw"],
+               // top: "61%", // same as left
+                scale: 2.5,
+                //brightness: 100,
+
+              }}
+              transition={{ delay: 1 }}
+            >
+              <div id="pikachu" class="pokeCarrusel__pokemonBefore">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" />
+              </div>
+            </motion.div>
             <div class="pokeCarrusel__pokemon">
               <img
                 class="pokeCarrusel__image"
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
               />
             </div>
             <div class="pokeCarrusel__pokemonAfter">
